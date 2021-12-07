@@ -1,5 +1,7 @@
 package comunicacion;
 
+import java.util.*;
+
 public class Alfabeto extends Pictograma {
 	private String[] letras;
 	private String interpretacion;
@@ -24,16 +26,24 @@ public class Alfabeto extends Pictograma {
 	
 	public String toString() {
 		String answer= "";
-		for(int i=1; i<=letras.length;i++) {
-			if(i!=letras.length) {
-				answer+=i+", ";
+		for(int i=1; i<letras.length;i++) {
+			if(i!=letras.length-1) {
+				answer+=Arrays.asList(letras).get(i)+", ";
 			}
 			else {
-				answer+=i;
+				answer+= Arrays.asList(letras).get(i);
 			}
 		}
 		return answer;
 	}
+	
+	/*
+	public static void main(String[] args) {
+		Alfabeto alfabeto = new Alfabeto("alfabeto griego, occidente",
+				new String [] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"},
+				"Alfabeto latino");
+		System.out.print(alfabeto);
+	}*/
 
 	//
 	//getting and setting
